@@ -1,6 +1,9 @@
 package ru.fsep.repositories;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 import ru.fsep.models.UserInfo;
 
 /**
@@ -8,7 +11,9 @@ import ru.fsep.models.UserInfo;
  *
  * @author Robert Bagramov.
  */
+
+@Repository
 public interface UserInfoRepository extends CrudRepository<UserInfo, Long> {
-
-
+    @Query(value = "SELECT * FROM user WHERE user_info.id = :userId",nativeQuery = true)
+    UserInfo getUserInfoByUserId(@Param("userId") Long id);
 }
