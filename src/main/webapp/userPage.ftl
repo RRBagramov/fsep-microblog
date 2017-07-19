@@ -35,24 +35,24 @@
                 <div><img class="ava" class="img-responsive" alt="" src="${model.user.photoLink}"></div>
                 <a href="#"><span class="fio">${model.user.firstName} ${model.user.lastName}</span></a>
                 <br/>
-                <a href="#"><span class="mail">${model.user.nickname} </span></a>
+                <a href="#"><span class="mail">${model.user.nickname}</span></a>
                 <div class="row">
                     <div class="col-xs-3">
                         <h5>
                             <small>TWEETS</small>
-                            <a href="#">1,545</a>
+                            <a href="#">${model.userInfo.postsCount}</a>
                         </h5>
                     </div>
                     <div class="col-xs-4">
                         <h5>
                             <small>FOLLOWING</small>
-                            <a href="#">251</a>
+                            <a href="#">${model.userInfo.followingCount}</a>
                         </h5>
                     </div>
                     <div class="col-xs-5">
                         <h5>
                             <small>FOLLOWERS</small>
-                            <a href="#">153</a>
+                            <a href="#">${model.userInfo.followersCount}</a>
                         </h5>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
             <div class="panel-heading">
                 <div class="media">
                     <a class="media-left" href="#fake">
-                        <img alt="" class="media-object img-rounded" src="${model.user.photoLink}">
+                        <img alt="" class="media-object img-rounded">
                     </a>
                     <div class="media-body">
                         <div class="form-group has-feedback">
@@ -75,56 +75,20 @@
                 </div>
             </div>
             <div class="panel-body">
+
+                <#list model.posts as post>
                 <hr/>
                 <div class="media">
                     <a class="media-left" href="#fake">
-                        <img alt="" class="media-object img-rounded" src="${model.user.photoLink}">
+                        <img alt="" class="media-object img-rounded">
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">Media heading</h4>
-                        <p>Dolorem aspernatur rerum, iure? Culpa iste aperiam sequi, fuga, quasi rerum, eum, quo natus tenetur officia placeat.</p>
+                        <p>${post.text}</p>
                     </div>
                 </div>
-                <hr/>
-                <div class="media">
-                    <a class="media-left" href="#fake">
-                        <img alt="" class="media-object img-rounded" src="${model.user.photoLink}">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Media heading</h4>
-                        <p>Dolorem aspernatur rerum, iure? Culpa iste aperiam sequi, fuga, quasi rerum, eum, quo natus tenetur officia placeat.</p>
-                    </div>
-                </div>
-                <hr/>
-                <div class="media">
-                    <a class="media-left" href="#fake">
-                        <img alt="" class="media-object img-rounded" src="${model.user.photoLink}">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Media heading</h4>
-                        <p>Dolorem aspernatur rerum, iure? Culpa iste aperiam sequi, fuga, quasi rerum, eum, quo natus tenetur officia placeat.</p>
-                    </div>
-                </div>
-                <hr/>
-                <div class="media">
-                    <a class="media-left" href="#fake">
-                        <img alt="" class="media-object img-rounded" src="${model.user.photoLink}">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Media heading</h4>
-                        <p>Dolorem aspernatur rerum, iure? Culpa iste aperiam sequi, fuga, quasi rerum, eum, quo natus tenetur officia placeat.</p>
-                    </div>
-                </div>
-                <hr/>
-                <div class="media">
-                    <a class="media-left" href="#fake">
-                        <img alt="" class="media-object img-rounded" src="${model.user.photoLink}">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Media heading</h4>
-                        <p>Dolorem aspernatur rerum, iure? Culpa iste aperiam sequi, fuga, quasi rerum, eum, quo natus tenetur officia placeat.</p>
-                    </div>
-                </div>
+                </#list>
+
             </div>
         </div>
     </div>

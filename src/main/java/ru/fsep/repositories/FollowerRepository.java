@@ -1,6 +1,7 @@
 package ru.fsep.repositories;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import ru.fsep.models.Follower;
 
 /**
@@ -8,6 +9,8 @@ import ru.fsep.models.Follower;
  *
  * @author Robert Bagramov.
  */
+
+@Repository
 public interface FollowerRepository extends CrudRepository<Follower, Long> {
 
 }
